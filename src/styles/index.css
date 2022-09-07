@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, 'sans-serif';
+}
+
+html {
+  font-size: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 5rem;
+  background-color: #333;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.form-container {
+  background-color: rgb(13, 13, 13);
+  padding: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.form-container h2, .form-container p {
+  color: #fff;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.form-container h2 {
+  font-size: 2.4rem;
+}
+
+.form-container p {
+  font-size: 1.4rem;
+  margin: 3rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+input, button {
+  width: 100%;
+  background-color: #333;
+  border: 0;
+  outline: 0;
+  padding: 2rem 1rem;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+input {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 2px solid transparent;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+main input:focus {
+  opacity: 1;
+  cursor: text;
+  border-bottom-color:rgb(28, 236, 28);
+}
+
+input::placeholder {
+  color: rgb(161, 161, 161);
+}
+
+button {
+  margin-top: 3rem;
+  align-self: flex-end;
+  border-radius: 5px;
+}
+
+.form-selection {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+}
+
+.form-selection li {
+  color: rgb(161, 161, 161);
+  font-size: 1.8rem;
+}
+
+.form-selection .form-active {
+  color: #fff;
+  text-decoration: underline rgb(28, 236, 28);
+}
+
+
+@media screen and (min-width: 992px) {
+  .form-selection li:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  input:hover, button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
