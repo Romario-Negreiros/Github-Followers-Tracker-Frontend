@@ -74,6 +74,12 @@ button:active {
   opacity: 0.5;
 }
 
+form .note {
+  font-size: 1.2rem;
+  margin: 0;
+  text-align: left;
+}
+
 main input:focus {
   opacity: 1;
   cursor: text;
