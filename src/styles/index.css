@@ -113,6 +113,22 @@ button {
   text-decoration: underline rgb(28, 236, 28);
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 
 @media screen and (min-width: 992px) {
   .form-selection li:hover {
