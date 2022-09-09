@@ -1,0 +1,31 @@
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.loader div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader div::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid rgb(161, 161, 161);
+  border-top: 10px solid rgb(28, 236, 28);
+  animation: spin 1s linear infinite;
+}
