@@ -113,7 +113,7 @@ button {
   text-decoration: underline rgb(28, 236, 28);
 }
 
-.modal {
+.cover {
   position: fixed;
   top: 0;
   left: 0;
