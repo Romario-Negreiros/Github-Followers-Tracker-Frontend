@@ -2,6 +2,10 @@
   width: 100%;
   max-width: 400px;
   text-align: center;
+  background-color: #333;
+  padding: 5rem 1rem;
+  border-radius: 5px;
+  position: relative;
 }
 
 .container h3 {
