@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { RegisterForm, UnregisterForm, UpdateForm, Loader, Error } from '../components'
+import { RegisterForm, UnregisterForm, UpdateForm, Loader, Error, Success } from '../components'
 
 import type { NextPage } from 'next'
 
@@ -9,7 +9,7 @@ type Forms = 'register' | 'unregister' | 'update'
 const Home: NextPage = () => {
   const [isLoaded, setIsLoaded] = useState(true)
   const [error, setError] = useState('')
-  const [successMsg, setSuccessMsg] = useState('')
+  const [successMsg, setSuccessMsg] = useState('op')
   const [form, setForm] = useState<Forms>('register')
 
   const setErrorState = (error: string) => {
@@ -70,8 +70,8 @@ const Home: NextPage = () => {
       </ul>
       {renderForm()}
       {(!isLoaded || error || successMsg) && (
-        <div className="cover">
-          {!isLoaded ? <Loader /> : error ? <Error error={error} /> : successMsg ? <div className="successMsg">{successMsg}</div> : ''}
+        <div className="modal">
+          {!isLoaded ? <Loader /> : error ? <Error error={error} /> : successMsg ? <Success successMsg={successMsg} /> : ''}
         </div>
       )}
     </main>
