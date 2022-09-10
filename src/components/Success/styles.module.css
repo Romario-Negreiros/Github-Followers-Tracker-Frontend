@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.container h3 {
+  font-size: 2.4rem;
+  color: rgb(28, 236, 28);
+}
+
+.container p {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  margin-top: 4rem;
+  color: #fff;
+}
+
+@media screen and (min-width: 576px) {
+  .container h3 {
+    font-size: 2.7rem;
+  }
+
+  .container p {
+    font-size: 1.8rem;
+  }
+}
