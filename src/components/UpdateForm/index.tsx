@@ -71,7 +71,20 @@ const UpdateForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState, 
           />
         </div>
         <input placeholder="New name..." {...register('newName')} />
-        <input type="email" placeholder="New email?..." {...register('newEmail')} />
+        <div>
+          {errors.newEmail?.message && <p className="error">{errors.newEmail.message}</p>}
+          <input
+            type="email"
+            placeholder="New email?..."
+            {...register('newEmail', {
+              required: 'Your email is needed!',
+              pattern: {
+                value: EmailPattern,
+                message: 'Please input a valid email!'
+              }
+            })}
+          />
+        </div>
         <button type="submit">Update</button>
       </form>
     </div>
