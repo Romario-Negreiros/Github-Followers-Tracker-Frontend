@@ -9,7 +9,7 @@ type Forms = 'register' | 'unregister' | 'update'
 const Home: NextPage = () => {
   const [isLoaded, setIsLoaded] = useState(true)
   const [error, setError] = useState('')
-  const [successMsg, setSuccessMsg] = useState('op')
+  const [successMsg, setSuccessMsg] = useState('')
   const [form, setForm] = useState<Forms>('register')
 
   const setErrorState = (error: string) => {
@@ -46,11 +46,29 @@ const Home: NextPage = () => {
   const renderForm = () => {
     switch (form) {
       case 'register':
-        return <RegisterForm setErrorState={setErrorState} setIsLoadedState={setIsLoadedState} setSuccessMsgState={setSuccessMsgState} />
+        return (
+          <RegisterForm
+            setErrorState={setErrorState}
+            setIsLoadedState={setIsLoadedState}
+            setSuccessMsgState={setSuccessMsgState}
+          />
+        )
       case 'unregister':
-        return <UnregisterForm setErrorState={setErrorState} setIsLoadedState={setIsLoadedState} setSuccessMsgState={setSuccessMsgState} />
+        return (
+          <UnregisterForm
+            setErrorState={setErrorState}
+            setIsLoadedState={setIsLoadedState}
+            setSuccessMsgState={setSuccessMsgState}
+          />
+        )
       case 'update':
-        return <UpdateForm setErrorState={setErrorState} setIsLoadedState={setIsLoadedState} setSuccessMsgState={setSuccessMsgState} />
+        return (
+          <UpdateForm
+            setErrorState={setErrorState}
+            setIsLoadedState={setIsLoadedState}
+            setSuccessMsgState={setSuccessMsgState}
+          />
+        )
     }
   }
 
@@ -71,7 +89,15 @@ const Home: NextPage = () => {
       {renderForm()}
       {(!isLoaded || error || successMsg) && (
         <div className="modal">
-          {!isLoaded ? <Loader /> : error ? <Error error={error} /> : successMsg ? <Success successMsg={successMsg} /> : ''}
+          {!isLoaded ? (
+            <Loader />
+          ) : error ? (
+            <Error error={error} setErrorState={setErrorState} />
+          ) : successMsg ? (
+            <Success successMsg={successMsg} setSuccessMsgState={setSuccessMsgState} />
+          ) : (
+            ''
+          )}
         </div>
       )}
     </main>
