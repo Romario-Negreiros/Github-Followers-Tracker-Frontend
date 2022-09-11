@@ -11,7 +11,7 @@ interface Inputs {
   email: string
 }
 
-const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState }) => {
+const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState, setSuccessMsgState }) => {
   const {
     handleSubmit,
     register,
@@ -22,7 +22,7 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
     try {
       setIsLoadedState(false)
       const response = await fetch('http://localhost:3300/users/register', {
-        method: 'PUT',
+        method: 'POST',
         body: JSON.stringify({
           name: 'xalb'
         }),
@@ -32,7 +32,7 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
       })
       const body = await response.json()
       if (response.ok) {
-        console.log(body, data)
+        setSuccessMsgState(body)
       } else {
         if (body.error) {
           throw new Error(body.error)
