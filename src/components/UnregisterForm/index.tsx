@@ -35,7 +35,11 @@ const UnregisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedSta
       }
     } catch (err) {
       if (err instanceof Error) {
-        setErrorState(err.message)
+        if (err.message === 'Failed to fetch') {
+          setErrorState("We couldn't complete the action, please, try again!")
+        } else {
+          setErrorState(err.message)
+        }
       }
     } finally {
       setIsLoadedState(true)

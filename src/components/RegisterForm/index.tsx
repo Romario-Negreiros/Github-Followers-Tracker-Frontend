@@ -22,7 +22,7 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
     try {
       setIsLoadedState(false)
       const response = await fetch('http://localhost:3300/users/register', {
-        method: 'POST',
+        method: 'POAAAST',
         body: JSON.stringify({
           name: 'xalb'
         }),
@@ -34,13 +34,15 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
       if (response.ok) {
         setSuccessMsgState(body)
       } else {
-        if (body.error) {
-          throw new Error(body.error)
-        }
+        throw new Error(body.error)
       }
     } catch (err) {
       if (err instanceof Error) {
-        setErrorState(err.message)
+        if (err.message === 'Failed to fetch') {
+          setErrorState("We couldn't complete the action, please, try again!")
+        } else {
+          setErrorState(err.message)
+        }
       }
     } finally {
       setIsLoadedState(true)
@@ -57,7 +59,7 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
           <input placeholder="Name..." {...register('name', { required: 'Your name is needed!' })} />
         </div>
         <div>
-          {errors.name?.message && <p className="error">{errors.name.message}</p>}
+          {errors.email?.message && <p className="error">{errors.email.message}</p>}
           <input
             type="email"
             placeholder="Email..."
