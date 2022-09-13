@@ -29,7 +29,7 @@ const UnregisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedSta
       })
       const body = await response.json()
       if (response.ok) {
-        setSuccessMsgState(body)
+        setSuccessMsgState(body.message)
       } else {
         throw new Error(body.error)
       }
