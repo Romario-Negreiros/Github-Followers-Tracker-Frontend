@@ -55,12 +55,6 @@ Frontend repo of a bot that keeps track of your github profile followers, sendin
     >> After your pull request\'s merge has been done, you can delete your branch
 ```
 
-## Useful links
-
-[(Back to top)](#table-of-contents)
-
-Soon...
-
 ## Author
 
 [(Back to top)](#table-of-contents)
