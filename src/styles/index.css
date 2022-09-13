@@ -93,6 +93,10 @@ main input:focus {
   border-bottom-color:rgb(28, 236, 28);
 }
 
+main button:focus {
+  opacity: 0.5;
+}
+
 input::placeholder {
   color: rgb(161, 161, 161);
 }
