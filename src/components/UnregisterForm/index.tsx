@@ -24,7 +24,7 @@ const UnregisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedSta
         method: 'DELETE',
         body: JSON.stringify(data),
         headers: new Headers({
-          'Content-Type': 'application.json'
+          'Content-Type': 'application/json'
         })
       })
       const body = await response.json()

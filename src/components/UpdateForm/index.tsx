@@ -26,7 +26,7 @@ const UpdateForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState, 
       }
       setIsLoadedState(false)
       const response = await fetch('http://localhost:3300/users/update', {
-        method: 'UPDATE',
+        method: 'PUT',
         body: JSON.stringify(data),
         headers: new Headers({
           'Content-Type': 'application/json'

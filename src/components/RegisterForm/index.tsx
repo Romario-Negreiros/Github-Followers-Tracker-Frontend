@@ -22,10 +22,8 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
     try {
       setIsLoadedState(false)
       const response = await fetch('http://localhost:3300/users/register', {
-        method: 'POAAAST',
-        body: JSON.stringify({
-          name: 'xalb'
-        }),
+        method: 'POST',
+        body: JSON.stringify(data),
         headers: new Headers({
           'Content-Type': 'application/json'
         })
