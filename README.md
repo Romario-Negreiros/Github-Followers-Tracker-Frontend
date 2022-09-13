@@ -19,13 +19,15 @@ Frontend repo of a bot that keeps track of your github profile followers, sendin
 
 [(Back to top)](#table-of-contents)
 
-Soon...
+- [x] Register form
+- [x] Update form
+- [x] Unregister form
 
 ## Packages
 
 [(Back to top)](#table-of-contents)
 
-Soon...
+- [React Hook Form](https://react-hook-form.com)
 
 ## Contributing
 
