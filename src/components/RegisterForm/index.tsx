@@ -21,7 +21,7 @@ const RegisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState
   const onSubmit: SubmitHandler<Inputs> = async data => {
     try {
       setIsLoadedState(false)
-      const response = await fetch('http://localhost:3300/users/register', {
+      const response = await fetch('https://github-followers-tracker.cyclic.app/users/register', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: new Headers({

@@ -25,7 +25,7 @@ const UpdateForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedState, 
         throw new Error('To update your profile you to change at least one information!')
       }
       setIsLoadedState(false)
-      const response = await fetch('http://localhost:3300/users/update', {
+      const response = await fetch('https://github-followers-tracker.cyclic.app/users/update', {
         method: 'PUT',
         body: JSON.stringify(data),
         headers: new Headers({

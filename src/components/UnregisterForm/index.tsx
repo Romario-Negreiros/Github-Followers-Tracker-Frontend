@@ -20,7 +20,7 @@ const UnregisterForm: FC<FormComponentsProps> = ({ setErrorState, setIsLoadedSta
   const onSubmit: SubmitHandler<Input> = async data => {
     try {
       setIsLoadedState(false)
-      const response = await fetch('http://localhost:3000/users/unregister', {
+      const response = await fetch('https://github-followers-tracker.cyclic.app/users/unregister', {
         method: 'DELETE',
         body: JSON.stringify(data),
         headers: new Headers({
